@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div>
+    <div style="margin: 10px 0px;">Your Orders</div>
+
+    <div>
+        {% for order in orders %}
+
+        <div class="orders-c">
+            <div style="display: flex; flex-direction: row;">
+                <div style="display: flex; flex-direction: column; width: 200px;">
+                    <div style="font-size: 16px; color: #007bff;">{{order.order_id}}</div>
+                    <div>Amount : <span class="fa fa-inr"></span> {{order.total}}<br>Placed on :
+                        {{order.created_at}}</div>
+                </div>
+                <div style="text-align: right; display: flex; flex-direction: column; width: 200px;">
+                    <div>{{order.status}}</div>
+                    <div class="orders-know-more">Know More</div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
