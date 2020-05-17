@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Your Account | ShoppingMart{% endblock %}
 {% block content %}
-
 <style>
     .orders-c {
         background: #fff;
@@ -13,7 +12,6 @@
         padding: 10px 15px;
         margin-bottom: 5px;
     }
-
     .orders-know-more {
         color: rgba(0, 0, 0, 0.4);
         margin-top: 40px;
@@ -24,9 +22,7 @@
         border: 1px solid rgba(0, 0, 0, 0.1);
     }
 </style>
-
 <script>
-
     function loadOrderDetails(id) {
         $.ajax({
             url: '/api/order-id/' + id,
@@ -42,19 +38,14 @@
             }
         });
     }
-
     function hideDetails() {
         document.getElementById('more-details').style.display = 'none';
     }
-
 </script>
-
 <div id="more-details"
     style="display: none; position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: 101; background: rgba(0, 0, 0, 0.6); ">
-
     <div
         style="text-align: center; background: white; border-radius: 10px; margin: 50px auto; padding: 10px; width: 400px;">
-
         <div style="font-size: 24px; font-weight: bold;">Order Info</div>
         <div id="order-id" style="margin-top: 5px; color: #007bff;"></div>
         <div id="status"
@@ -69,16 +60,10 @@
                 <div id="amount"></div>
                 <div id="placed"></div>
             </div>
-
         </div>
         <div onclick="hideDetails()" style="cursor: pointer;">X Close X</div>
-
     </div>
-
-
 </div>
-
-
 <div style="background: #f7f8fa; padding: 50px;">
     {% if user.is_authenticated %}
     Username : {{user.username}}<br>
@@ -86,13 +71,10 @@
     {% else %}
     You're not logged in, <a href="/login">Login</a> or <a href="/signup">Signup</a>
     {% endif %}
-
     <div>
         <div style="margin: 10px 0px;">Your Orders</div>
-
         <div>
             {% for order in orders %}
-
             <div class="orders-c">
                 <div style="display: flex; flex-direction: row;">
                     <div style="display: flex; flex-direction: column; width: 200px;">
@@ -106,15 +88,8 @@
                     </div>
                 </div>
             </div>
-
             {% endfor %}
         </div>
     </div>
-
-
 </div>
-
-
-
-
 {% endblock %}
