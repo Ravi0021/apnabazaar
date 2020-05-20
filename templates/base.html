@@ -1,175 +1,109 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+<head>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/shop/style.css">
-    <script src="/static/base.js"></script>
-    
-    <title>ApnaBazaar</title>
-  </head>
-  <body>
-  {% load static %}
-    <!-- Just an image -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <img src="{% static 'shop/logo.png' %}" width="327" height="54" alt="">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <title> {% block title %} {% endblock %}   </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Our Products <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
-      <ul class="nav justify-content-end">
-      {% include 'header.html' %}
-      </ul>
+    <link href="/static/shop/style.css" rel="stylesheet" />
+<script src="/static/base.js"></script>
+
+</head>
+
+<body>
+    {% load static %}
+    <div class="header-c">
+      <div class="container">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          {% include 'header.html' %}
+        </ul>
+        <div class="header-title"><a href="/"><img src="{% static 'shop/logo_mart.png' %}" /></a></div>
+      </div>
     </div>
-  </nav>
 
-    {% block content %}
-      Body content 
-    {% endblock %}
+    {% include 'messaging.html' %}
 
-    <div class="center service-c">
+{% block content %}
+ Body content 
+{% endblock %} 
+
+  <div class="center service-c">
+    <div class="container padding-50">
     <div class="service-inner">
-      <div class="service-icon">
-        <span class="fa fa-mobile"></span>
-      </div>
+        <div class="service-icon"><span class="fa fa-mobile"></span></div>
         <div>
-          <h4 class="tt-title" style="color:#191919;" data-c="#191919" data-ac="#2879fe">
-            SUPPORT 24/7
-          </h4>
-            <p style="color: #777777">
-              Contact us 24 hours a day, 7 days a week
-            </p>
+            <h4 class="tt-title" style="color:#191919;" data-c="#191919" data-ac="#2879fe">SUPPORT 24/7</h4>
+              <p style="color: #777777">Contact us 24 hours a day, 7 days a week</p>
+            </div>
+        </div>
+        <div class="service-inner" >
+            <div class="service-icon"><span class="fa fa-exchange"></span></div>
+            <div>
+                <h4 class="tt-title" style="color:#191919;" data-c="#191919" data-ac="#2879fe">30 DAYS RETURN</h4>
+                  <p style="color: #777777">Simply return it within 24 days for an exchange.</p>
+                </div>
+            </div>
+        <div class="service-inner" >
+            <div class="service-icon"><span class="fa fa-truck"></span></div>
+            <div>
+              <h4 style="color:#191919;" data-c="#191919" data-ac="#2879fe">FREE SHIPPING</h4>
+              <p style="color: #777777">Free shipping on all US order or order above $99</p>
+            </div>
         </div>
     </div>
-    <div class="service-inner" >
-      <div class="service-icon">
-        <span class="fa fa-exchange"></span>
-      </div>
-      <div>
-        <h4 class="tt-title" style="color:#191919;" data-c="#191919" data-ac="#2879fe">
-          30 DAYS RETURN
-        </h4>
-          <p style="color: #777777">
-            Simply return it within 24 days for an exchange.
-          </p>
-      </div>
-    </div>
-    <div class="service-inner" >
-      <div class="service-icon">
-        <span class="fa fa-truck"></span>
-      </div>
-      <div>
-        <h4 style="color:#191919;" data-c="#191919" data-ac="#2879fe">
-          FREE SHIPPING
-        </h4>
-        <p style="color: #777777">
-          Free shipping on all US order or order above $99
-        </p>
-      </div>
+  </div>
+  <div style="background: #f7f8fa;">
+    <div class="center container padding-50"><div class="footer-div">
+  <div class="tt-mobile-collapse">
+            <h4 class="tt-collapse-title">CATEGORIES</h4>
+            <div class="tt-collapse-content"><ul class="tt-list"><li><a href="/collections/womens">Women</a></li><li><a href="/collections/mens">Men</a></li><li><a href="/collections/trending">Accessories</a></li><li><a href="/collections/trending">Shoes</a></li><li><a href="/collections/trending">New Arrivals</a></li><li><a href="/collections/trending">Clearence</a></li></ul>
+            </div>
+          </div></div>
+  <div class="footer-div">
+  <div class="tt-mobile-collapse">
+            <h4 class="tt-collapse-title">BUY WITH US</h4>
+            <div class="tt-collapse-content"><ul class="tt-list"><li><a href="/pages/about">About Us</a></li><li><a href="/pages/services">Services</a></li><li><a href="/pages/contact">Contact Us</a></li><li><a href="/pages/faq">FAQs</a></li><li><a href="/pages/privacy-policy">Privacy Policy</a></li><li><a href="/pages/cookie-policy">Cookie Policy</a></li><li><a href="/pages/terms-and-conditions">Terms and Conditions</a></li></ul>
+              
+              
+            </div>
+          </div></div>
+  <div class="footer-div">
+  <div class="tt-mobile-collapse">
+            <h4 class="tt-collapse-title">ABOUT</h4>
+            <div class="light-dark">
+                Buy anything you want from us. The everything store started in 2004 serving customers daily.
+            </div>
+          </div></div>
+  <div class="footer-div">
+  <div class="tt-mobile-collapse">
+            <h4 class="tt-collapse-title">CONTACT US</h4>
+            <div class="light-dark">
+              <address>
+      <p><span>ADDRESS:</span> A/3, Business Park, New City Centre, Noida, UP</p>
+      <p><span>PHONE:</span> +91 9898726254</p>
+      <p><span>HOURS:</span> all week from 9 am to 9 pm</p>
+      <p><span>E-MAIL:</span> info@shoppingmart.com</p>
+  </address>
+              
+            </div>
+  </div>
     </div>
   </div>
+</div>
+    <div class="footer-bottom center">
       
+        <div> 
+            <a href="/"><img src="{% static 'shop/logo_mart.png' %}" /></a>
+          </div>
+            <div class="margin-top">&copy; ShoppingMart 2020. All Rights Reserved</div>
+          
+   
+  </div></footer>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
-      <div class="tt-footer-col tt-color-scheme-03">
-  </div>
-  <div class="center padding-10">
-    <div class="footer-div">
-      <div class="tt-mobile-collapse">
-        <h4 class="tt-collapse-title">
-          CATEGORIES
-        </h4>
-        <div class="tt-collapse-content">
-          <ul class="tt-list">
-            <li><a href="/collections/womens">Laptop</a></li>
-            <li><a href="/collections/mens">Smartphones</a></li>
-            <li><a href="/collections/trending">Computer Accessories</a></li>
-            <li><a href="/collections/trending">Watch</a></li>
-            <li><a href="/collections/trending">Camera</a></li>
-            <li><a href="/collections/trending">Television</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-div">
-      <div class="tt-mobile-collapse">
-        <h4 class="tt-collapse-title">
-        BUY WITH US
-        </h4>
-        <div class="tt-collapse-content">
-          <ul class="tt-list">
-          <li><a href="/pages/about">About Us</a></li>
-          <li><a href="/pages/services">Services</a></li>
-          <li><a href="/pages/contact">Contact Us</a></li>
-          <li><a href="/pages/faq">FAQs</a></li>
-          <li><a href="/pages/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/pages/cookie-policy">Cookie Policy</a></li>
-          <li><a href="/pages/terms-and-conditions">Terms and Conditions</a></li>
-          </ul>  
-        </div>
-      </div>
-    </div>
-    <div class="footer-div">
-      <div class="tt-mobile-collapse">
-        <h4 class="tt-collapse-title">
-          ABOUT
-        </h4>
-        <div class="light-dark">
-          Buy anything you want from us. The everything store started in 2004 serving customers daily.
-        </div>
-      </div>
-    </div>
-    <div class="footer-div">
-      <div class="tt-mobile-collapse">
-        <h4 class="tt-collapse-title">
-          CONTACT US
-        </h4>
-        <div class="light-dark">
-          <address>
-            <p><span>ADDRESS:</span> 14/25, Bamrauli Katara, Fatehabad Road, Agra, UP</p>
-            <p><span>PHONE:</span> +91 8077000000</p>
-            <p><span>HOURS:</span> all week from 9 am to 9 pm</p>
-            <p><span>E-MAIL:</span> info@apnabazaar.com</p>
-          </address>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom center">
-      <div> 
-        <a href="/"><img src="{% static 'shop/logo.png' %}" width="327" height="54" alt=""></a>
-      </div>
-      <div class="margin-top">
-        &copy; Apnabazaar 2020. All Rights Reserved
-      </div>
-    </div>
-  </footer>
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
